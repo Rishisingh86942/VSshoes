@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VS Shoes - Premium Leather Formal Footwear</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .heading-font {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1600269452121-4f2416e55c28?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGVhdGhlciUyMHNob2VzfGVufDB8fDB8fHww&w=1000&q=80');
+            background-size: cover;
+            background-position: center;
+            min-height: 80vh;
+        }
+        
+        .product-card:hover .product-overlay {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .product-overlay {
+            transition: all 0.3s ease;
+            transform: translateY(20px);
+            opacity: 0;
+        }
+        
+        .scroll-hidden {
+            scrollbar-width: none;
+        }
+        
+        .scroll-hidden::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .shoe-size-btn:not(.selected):hover {
+            background-color: #f3f4f6;
+        }
+        
+        .selected {
+            background-color: #000;
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <span class="heading-font text-2xl font-bold text-gray-900">VS</span>
+                </div>
+                
+                <!-- Navigation - Desktop -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#home" class="font-medium text-gray-900 hover:text-amber-800 transition">Home</a>
+                    <a href="#collection" class="font-medium text-gray-700 hover:text-amber-800 transition">Collection</a>
+                    <a href="#about" class="font-medium text-gray-700 hover:text-amber-800 transition">About</a>
+                    <a href="#testimonials" class="font-medium text-gray-700 hover:text-amber-800 transition">Testimonials</a>
+                    <a href="#contact" class="font-medium text-gray-700 hover:text-amber-800 transition">Contact</a>
+                </nav>
+                
+                <!-- Icons -->
+                <div class="flex items-center space-x-4">
+                    <a href="#" class="text-gray-700 hover:text-amber-800 transition"><i class="fas fa-search"></i></a>
+                    <a href="#" class="text-gray-700 hover:text-amber-800 transition"><i class="fas fa-user"></i></a>
+                    <a href="#" class="text-gray-700 hover:text-amber-800 transition relative">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="absolute -top-2 -right-2 bg-amber-800 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">0</span>
+                    </a>
+                    
+                    <!-- Mobile Menu Button -->
+                    <button class="md:hidden text-gray-700 focus:outline-none" id="menu-btn">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <nav class="md:hidden hidden py-4" id="mobile-menu">
+                <div class="flex flex-col space-y-3">
+                    <a href="#home" class="font-medium text-gray-900 hover:text-amber-800 transition">Home</a>
+                    <a href="#collection" class="font-medium text-gray-700 hover:text-amber-800 transition">Collection</a>
+                    <a href="#about" class="font-medium text-gray-700 hover:text-amber-800 transition">About</a>
+                    <a href="#testimonials" class="font-medium text-gray-700 hover:text-amber-800 transition">Testimonials</a>
+                    <a href="#contact" class="font-medium text-gray-700 hover:text-amber-800 transition">Contact</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero flex items-center justify-center text-white" id="home">
+        <div class="container mx-auto px-4 text-center">
+            <p class="uppercase tracking-widest text-sm mb-4">Handcrafted Excellence</p>
+            <h1 class="heading-font text-4xl md:text-6xl font-bold mb-6">Premium Leather Shoes for the Modern Gentleman</h1>
+            <p class="text-lg max-w-2xl mx-auto mb-8">Experience timeless elegance with VS Shoes' collection of hand-stitched formal footwear, crafted from the finest Italian leather.</p>
+            <div class="flex justify-center space-x-4">
+                <a href="#collection" class="bg-amber-800 hover:bg-amber-900 text-white px-8 py-3 font-medium transition duration-300">Shop Now</a>
+                <a href="#about" class="border border-white hover:bg-white hover:text-black text-white px-8 py-3 font-medium transition duration-300">Our Craft</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="flex items-center space-x-4 p-4 border border-gray-100 rounded-lg hover:shadow-lg transition">
+                    <div class="text-3xl text-amber-800">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <div>
+                        <h3 class="heading-font font-semibold text-lg">Handcrafted Quality</h3>
+                        <p class="text-gray-600">Each pair is meticulously crafted by master shoemakers.</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4 p-4 border border-gray-100 rounded-lg hover:shadow-lg transition">
+                    <div class="text-3xl text-amber-800">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div>
+                        <h3 class="heading-font font-semibold text-lg">Premium Materials</h3>
+                        <p class="text-gray-600">Only the finest Italian leather and materials used.</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4 p-4 border border-gray-100 rounded-lg hover:shadow-lg transition">
+                    <div class="text-3xl text-amber-800">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <div>
+                        <h3 class="heading-font font-semibold text-lg">Free Shipping</h3>
+                        <p class="text-gray-600">Complimentary worldwide delivery on all orders.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collection Section -->
+    <section class="py-16 bg-gray-50" id="collection">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <p class="text-amber-800 uppercase tracking-widest text-sm mb-3">Our Collection</p>
+                <h2 class="heading-font text-3xl md:text-4xl font-bold mb-4">Timeless Formal Footwear</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Discover our range of exquisitely crafted leather shoes that blend tradition with contemporary style.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <!-- Product 1 -->
+                <div class="bg-white shadow-sm rounded-lg overflow-hidden hover:shadow-lg transition product-card">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1560769629-975ec94e6a86?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bGVhdGhlciUyMHNob2VzfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" 
+                             alt="Oxford Leather Shoe" class="w-full h-64 object-cover">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center product-overlay">
+                            <button class="bg-amber-800 hover:bg-amber-900 text-white px-6 py-2 rounded-full font-medium">Quick View</button>
+                        </div>
+                        <div class="absolute top-3 right-3 bg-white rounded-full p-2 shadow">
+                            <i class="fas fa-heart text-gray-400 hover:text-red-500 transition cursor-pointer"></i>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="heading-font font-semibold text-lg mb-1">Classic Oxford</h3>
+                        <p class="text-gray-600 text-sm mb-2">Black Full-Grain Leather</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-gray-900">$249.99</span>
+                            <button class="text-amber-800 hover:text-amber-900 text-sm font-medium">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="bg-white shadow-sm rounded-lg overflow-hidden hover:shadow-lg transition product-card">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1579338559194-a162d19bf842?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8bGVhdGhlciUyMHNob2VzfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" 
+                             alt="Derby Leather Shoe" class="w-full h-64 object-cover">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center product-overlay">
+                            <button class="bg-amber-800 hover:bg-amber-900 text-white px-6 py-2 rounded-full font-medium">Quick View</button>
+                        </div>
+                        <div class="absolute top-3 right-3 bg-white rounded-full p-2 shadow">
+                            <i class="fas fa-heart text-gray-400 hover:text-red-500 transition cursor-pointer"></i>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="heading-font font-semibold text-lg mb-1">Cap-Toe Derby</h3>
+                        <p class="text-gray-600 text-sm mb-2">Brown Calfskin Leather</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-gray-900">$229.99</span>
+                            <button class="text-amber-800 hover:text-amber-900 text-sm font-medium">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="bg-white shadow-sm rounded-lg overflow-hidden hover:shadow-lg transition product-card">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1549298916-f52d724204b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bGVhdGhlciUyMHNob2VzfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" 
+                             alt="Brogue Leather Shoe" class="w-full h-64 object-cover">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center product-overlay">
+                            <button class="bg-amber-800 hover:bg-amber-900 text-white px-6 py-2 rounded-full font-medium">Quick View</button>
+                        </div>
+                        <div class="absolute top-3 right-3 bg-white rounded-full p-2 shadow">
+                            <i class="fas fa-heart text-gray-400 hover:text-red-500 transition cursor-pointer"></i>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="heading-font font-semibold text-lg mb-1">Wingtip Brogue</h3>
+                        <p class="text-gray-600 text-sm mb-2">Tan Genuine Leather</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-gray-900">$269.99</span>
+                            <button class="text-amber-800 hover:text-amber-900 text-sm font-medium">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="bg-white shadow-sm rounded-lg overflow-hidden hover:shadow-lg transition product-card">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1619661628479-8d94f48a19d0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGxlYXRoZXIlMjBzaG9lc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60" 
+                             alt="Monk Strap Leather Shoe" class="w-full h-64 object-cover">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center product-overlay">
+                            <button class="bg-amber-800 hover:bg-amber-900 text-white px-6 py-2 rounded-full font-medium">Quick View</button>
+                        </div>
+                        <div class="absolute top-3 right-3 bg-white rounded-full p-2 shadow">
+                            <i class="fas fa-heart text-gray-400 hover:text-red-500 transition cursor-pointer"></i>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="heading-font font-semibold text-lg mb-1">Double Monk Strap</h3>
+                        <p class="text-gray-600 text-sm mb-2">Dark Brown Pebbled Leather</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-gray-900">$279.99</span>
+                            <button class="text-amber-800 hover:text-amber-900 text-sm font-medium">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="inline-block border border-amber-800 text-amber-800 hover:bg-amber-800 hover:text-white px-8 py-3 font-medium transition duration-300">View All Collection</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-16 bg-white" id="about">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1543852786-1b906f83c660?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8c2hvZW1ha2VyfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" 
+                         alt="Shoemaker at work" class="rounded-lg shadow-lg w-full">
+                </div>
+                <div class="lg:w-1/2">
+                    <p class="text-amber-800 uppercase tracking-widest text-sm mb-3">Our Story</p>
+                    <h2 class="heading-font text-3xl md:text-4xl font-bold mb-6">Crafting Elegance Since 1985</h2>
+                    <p class="text-gray-600 mb-4">Founded in a small workshop in Florence, VS Shoes has been dedicated to creating the finest leather footwear for over three decades. Our journey began with a simple philosophy: to combine traditional craftsmanship with contemporary design.</p>
+                    <p class="text-gray-600 mb-6">Today, each pair of VS Shoes is still handcrafted by our master artisans who bring their decades of experience to every stitch. We source only the finest leathers from reputable tanneries in Italy and England, ensuring quality that stands the test of time.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                        <div class="flex items-start space-x-3">
+                            <div class="text-amber-800 mt-1">
+                                <i class="fas fa-shoe-prints"></i>
+                            </div>
+                            <div>
+                                <h4 class="heading-font font-semibold mb-1">Handmade Quality</h4>
+                                <p class="text-gray-600 text-sm">Each pair takes 8+ hours of meticulous craftsmanship</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="text-amber-800 mt-1">
+                                <i class="fas fa-leaf"></i>
+                            </div>
+                            <div>
+                                <h4 class="heading-font font-semibold mb-1">Premium Leather</h4>
+                                <p class="text-gray-600 text-sm">Ethically sourced, full-grain European leathers</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="inline-block bg-amber-800 hover:bg-amber-900 text-white px-8 py-3 font-medium transition duration-300">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-16 bg-gray-100" id="testimonials">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <p class="text-amber-800 uppercase tracking-widest text-sm mb-3">Testimonials</p>
+                <h2 class="heading-font text-3xl md:text-4xl font-bold mb-4">What Our Customers Say</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Don't just take our word for it - hear from executives, professionals and gentlemen who wear our shoes daily.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="text-amber-500 text-xl mr-1">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">"I've worn VS Shoes to countless board meetings and they've never let me down. The comfort is unmatched and the craftsmanship is evident in every detail. Worth every penny."</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="James Wilson" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold text-gray-900">James Wilson</h4>
+                            <p class="text-gray-500 text-sm">CEO, Fortis Group</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="text-amber-500 text-xl mr-1">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">"As a lawyer who's on his feet most of the day, comfort is crucial. My VS Shoes not only look impeccable but keep me comfortable through 14-hour workdays."</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/men/44.jpg" alt="David Chen" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold text-gray-900">David Chen</h4>
+                            <p class="text-gray-500 text-sm">Partner, Chen & Associates</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="text-amber-500 text-xl mr-1">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">"My first pair of VS Shoes has lasted me 5 years with proper care. The patina has only gotten better with time. I'm now on my 4th pair and they're my go-to brand."</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Michael Rodriguez" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold text-gray-900">Michael Rodriguez</h4>
+                            <p class="text-gray-500 text-sm">Investment Banker</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-amber-800 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="heading-font text-3xl md:text-4xl font-bold mb-6">Ready to Step Up Your Shoe Game?</h2>
+            <p class="text-xl mb-8 max-w-3xl mx-auto">Join thousands of discerning gentlemen who choose VS Shoes for their most important occasions.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#collection" class="bg-white hover:bg-gray-100 text-amber-800 px-8 py-3 font-medium transition duration-300">Shop Collection</a>
+                <a href="#contact" class="border border-white hover:bg-white hover:text-amber-800 px-8 py-3 font-medium transition duration-300">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-16 bg-white" id="contact">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div>
+                    <h2 class="heading-font text-3xl md:text-4xl font-bold mb-6">Get in Touch</h2>
+                    <p class="text-gray-600 mb-8">Have questions about our shoes or need assistance with sizing? Our customer service team is here to help.</p>
+                    
+                    <div class="space-y-6 mb-8">
+                        <div class="flex items-start space-x-4">
+                            <div class="text-amber-800 text-xl mt-1">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="heading-font font-semibold mb-1">Showroom Address</h4>
+                                <p class="text-gray-600">123 Leather Lane, Florence, Italy 50123</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="text-amber-800 text-xl mt-1">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="heading-font font-semibold mb-1">Contact Phone</h4>
+                                <p class="text-gray-600">+39 055 123 4567</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="text-amber-800 text-xl mt-1">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="heading-font font-semibold mb-1">Email Address</h4>
+                                <p class="text-gray-600">service@vsshoes.com</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="heading-font font-semibold mb-4">Store Hours</h4>
+                        <ul class="space-y-3 text-gray-600">
+                            <li class="flex justify-between max-w-xs">
+                                <span>Monday - Friday</span>
+                                <span>9:00 AM - 6:00 PM</span>
+                            </li>
+                            <li class="flex justify-between max-w-xs">
+                                <span>Saturday</span>
+                                <span>10:00 AM - 4:00 PM</span>
+                            </li>
+                            <li class="flex justify-between max-w-xs">
+                                <span>Sunday</span>
+                                <span>Closed</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div>
+                    <form class="bg-gray-50 p-8 rounded-lg shadow-sm">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label for="name" class="block text-gray-700 font-medium mb-2">Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-amber-500">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
+                                <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-amber-500">
+                            </div>
+                        </div>
+                        <div class="mb-6">
+                            <label for="subject" class="block text-gray-700 font-medium mb-2">Subject</label>
+                            <input type="text" id="subject" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-amber-500">
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
+                            <textarea id="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-amber-500"></textarea>
+                        </div>
+                        <button type="submit" class="bg-amber-800 hover:bg-amber-900 text-white px-8 py-3 font-medium transition duration-300 w-full md:w-auto">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <div class="text-center">
+                <h2 class="heading-font text-3xl md:text-4xl font-bold mb-4">Join Our Newsletter</h2>
+                <p class="text-gray-600 mb-8 max-w-2xl mx-auto">Subscribe to receive updates on new collections, exclusive offers, and style tips for the modern gentleman.</p>
+                
+                <form class="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
+                    <input type="email" placeholder="Your email address" class="flex-grow px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-amber-500">
+                    <button type="submit" class="bg-amber-800 hover:bg-amber-900 text-white px-8 py-3 font-medium transition duration-300">Subscribe</button>
+                </form>
+                <p class="text-xs text-gray-500 mt-4">We respect your privacy. Unsubscribe at any time.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i class="fas fa-shoe-prints text-2xl text-amber-800"></i>
+                        <h3 class="heading-font text-2xl font-bold">VS Shoes</h3>
+                    </div>
+                    <p class="text-gray-400 mb-4">Handcrafted leather footwear blending timeless elegance with modern sophistication.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-amber-500 transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-amber-500 transition"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-amber-500 transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-amber-500 transition"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="heading-font font-semibold text-lg mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-amber-500 transition">Home</a></li>
+                        <li><a href="#collection" class="text-gray-400 hover:text-amber-500 transition">Collection</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-amber-500 transition">About Us</a></li>
+                        <li><a href="#testimonials" class="text-gray-400 hover:text-amber-500 transition">Testimonials</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-amber-500 transition">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="heading-font font-semibold text-lg mb-4">Customer Service</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-amber-500 transition">FAQs</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-amber-500 transition">Shipping & Returns</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-amber-500 transition">Size Guide</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-amber-500 transition">Care Instructions</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-amber-500 transition">Shoe Trees</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="heading-font font-semibold text-lg mb-4">Payment Methods</h4>
+                    <div class="flex flex-wrap gap-3 mb-6">
+                        <i class="fab fa-cc-visa text-2xl text-gray-400"></i>
+                        <i class="fab fa-cc-mastercard text-2xl text-gray-400"></i>
+                        <i class="fab fa-cc-amex text-2xl text-gray-400"></i>
+                        <i class="fab fa-cc-paypal text-2xl text-gray-400"></i>
+                        <i class="fab fa-cc-apple-pay text-2xl text-gray-400"></i>
+                    </div>
+                    <h4 class="heading-font font-semibold text-lg mb-2">Secure Shopping</h4>
+                    <p class="text-gray-400 text-sm">All transactions are secure and encrypted.</p>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+                <p class="text-gray-500 text-sm">&copy; 2023 VS Shoes. All rights reserved. | Handcrafted in Italy</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Quick View Modal -->
+    <div class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center hidden" id="quick-view-modal">
+        <div class="bg-white rounded-lg max-w-6xl w-full max-h-[90vh] overflow-y-auto">
+            <button class="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 p-8">
+                <div class="sticky top-0">
+                    <div class="aspect-[4/3] overflow-hidden rounded-lg mb-4">
+                        <img src="https://images.unsplash.com/photo-1560769629-975ec94e6a86?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bGVhdGhlciUyMHNob2VzfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" 
+                             alt="Oxford Leather Shoe" class="w-full h-full object-cover">
+                    </div>
+                    <div class="grid grid-cols-4 gap-2">
+                        <div class="aspect-square cursor-pointer border border-gray-200 rounded overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1560769629-975ec94e6a86?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bGVhdGhlciUyMHNob2VzfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" 
+                                 alt="Oxford Leather Shoe" class="w-full h-full object-cover">
+                        </div>
+                        <div class="aspect-square cursor-pointer border border-gray-200 rounded overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1601924634907-0893826a4979?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8b3hmb3JkJTIwc2hvZXN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60" 
+                                 alt="Oxford Leather Shoe Side" class="w-full h-full object-cover">
+                        </div>
+                        <div class="aspect-square cursor-pointer border border-gray-200 rounded overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1610792516307-ea5acd9c3b00?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8b3hmb3JkJTIwc2hvZXN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60" 
+                                 alt="Oxford Leather Shoe Back" class="w-full h-full object-cover">
+                        </div>
+                        <div class="aspect-square cursor-pointer border border-gray-200 rounded overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1600269452121-4f2416e55c28?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGVhdGhlciUyMHNob2VzfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" 
+                                 alt="Oxford Leather Shoe Detail" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h2 class="heading-font text-3xl font-bold mb-2">Classic Oxford</h2>
+                    <p class="text-amber-800 text-lg font-medium mb-4">$249.99</p>
+                    
+                    <div class="flex items-center space-x-2 mb-6">
+                        <div class="flex text-amber-500">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span class="text-gray-500 text-sm">24 Reviews</span>
+                    </div>
+                    
+                    <p class="text-gray-600 mb-6">The timeless Oxford crafted from premium full-grain Italian leather, featuring our signature broguing detail and Goodyear welt construction for durability. The perfect balance of formal elegance and all-day comfort.</p>
+                    
+                    <div class="mb-6">
+                        <h3 class="font-semibold mb-3">Color: Black Full-Grain Leather</h3>
+                        <div class="flex space-x-3">
+                            <div class="w-8 h-8 rounded-full border border-gray-300 cursor-pointer bg-black"></div>
+                            <div class="w-8 h-8 rounded-full border border-gray-300 cursor-pointer bg-amber-800"></div>
+                            <div class="w-8 h-8 rounded-full border border-gray-300 cursor-pointer bg-gray-600"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <h3 class="font-semibold mb-3">Select Size</h3>
+                        <div class="grid grid-cols-4 sm:grid-cols-6 gap-3">
+                            <button class="shoe-size-btn border border-gray-300 rounded py-2 px-1 text-center hover:bg-gray-100">7</button>
+                            <button class="shoe-size-btn border border-gray-300 rounded py-2 px-1 text-center hover:bg-gray-100">7.5</button>
+                            <button class="shoe-size-btn border border-gray-300 rounded py-2 px-1 text-center hover:bg-gray-100">8</button>
+                            <button class="shoe-size-btn border border-gray-300 rounded py-2 px-1 text-center hover:bg-gray-100">8.5</button>
+                            <button class="shoe-size-btn selected border border-gray-300 rounded py-2 px-1 text-center">9</button>
+                            <button class="shoe-size-btn border border-gray-300 rounded py-2 px-1 text-center hover:bg-gray-100">9.5</button>
+                            <button class="shoe-size-btn border border-gray-300 rounded py-2 px-1 text-center hover:bg-gray-100">10</button>
+                            <button class="shoe-size-btn border border-gray-300 rounded py-2 px-1 text-center hover:bg-gray-100">10.5</button>
+                            <button class="shoe-size-btn border border-gray-300 rounded py-2 px-1 text-center hover:bg-gray-100">11</button>
+                            <button class="shoe-size-btn border border-gray-300 rounded py-2 px-1 text-center hover:bg-gray-100">11.5</button>
+                            <button class="shoe-size-btn border border-gray-300 rounded py-2 px-1 text-center hover:bg-gray-100">12</button>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 mb-8">
+                        <div class="flex items-center border border-gray-300 rounded overflow-hidden">
+                            <button class="px-4 py-2 text-lg">-</button>
+                            <span class="px-4 py-2 border-x border-gray-300">1</span>
+                            <button class="px-4 py-2 text-lg">+</button>
+                        </div>
+                        <button class="flex-1 bg-amber-800 hover:bg-amber-900 text-white font-medium py-3 px-6 transition">Add to Cart</button>
+                    </div>
+                    
+                    <div class="border-t border-gray-200 pt-6">
+                        <h3 class="font-semibold mb-3">Product Details</h3>
+                        <ul class="space-y-2 text-gray-600">
+                            <li class="flex">
+                                <span class="w-32 font-medium">Material:</span>
+                                <span>Full-grain Italian leather, leather lining</span>
+                            </li>
+                            <li class="flex">
+                                <span class="w-32 font-medium">Construction:</span>
+                                <span>Goodyear welted for durability</span>
+                            </li>
+                            <li class="flex">
+                                <span class="w-32 font-medium">Sole:</span>
+                                <span>Leather with rubber studs for grip</span>
+                            </li>
+                            <li class="flex">
+                                <span class="w-32 font-medium">Fit:</span>
+                                <span>True to size (view sizing guide)</span>
+                            </li>
+                            <li class="flex">
+                                <span class="w-32 font-medium">Care:</span>
+                                <span>Use cedar shoe trees and polish regularly</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-btn').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                this.innerHTML = '<i class="fas fa-times text-xl"></i>';
+            } else {
+                menu.classList.add('hidden');
+                this.innerHTML = '<i class="fas fa-bars text-xl"></i>';
+            }
+        });
+
+        // Quick view modal for products (simplified for demo)
+        const quickViewBtns = document.querySelectorAll('.product-overlay button');
+        const quickViewModal = document.getElementById('quick-view-modal');
+        const closeModal = quickViewModal.querySelector('button');
+        
+        quickViewBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                quickViewModal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+        
+        closeModal.addEventListener('click', function() {
+            quickViewModal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        });
+        
+        // Size selector
+        const sizeBtns = document.querySelectorAll('.shoe-size-btn');
+        sizeBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                sizeBtns.forEach(b => b.classList.remove('selected'));
+                this.classList.add('selected');
+            });
+        });
+    </script>
+</body>
+</html>
